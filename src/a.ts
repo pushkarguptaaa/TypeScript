@@ -75,54 +75,90 @@
 
 // TYPES
 
-type Employee = {
-    name: string;
-    startDate: Date;
-  };
+// type Employee = {
+//     name: string;
+//     startDate: Date;
+//   };
   
-  type Manager = {
-    name: string;
-    department: string;
-  };
+//   type Manager = {
+//     name: string;
+//     department: string;
+//   };
   
-  type TeamLead = Employee & Manager;
+//   type TeamLead = Employee & Manager;
   
-  const teamLead: TeamLead = {
-    name: "harkirat",
-    startDate: new Date(),
-    department: "Software developer"
-  };
+//   const teamLead: TeamLead = {
+//     name: "harkirat",
+//     startDate: new Date(),
+//     department: "Software developer"
+//   };
 
 // ARRAYS
 
-function maxValue(arr: number[]) {
-    let max = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i]
-        }
-    }
-    return max;
+// function maxValue(arr: number[]) {
+//     let max = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > max) {
+//             max = arr[i]
+//         }
+//     }
+//     return max;
+// }
+
+// console.log(maxValue([1, 2, 3]));
+
+// interface User {
+// 	firstName: string;
+// 	lastName: string;
+// 	age: number;
+// }
+
+// function filteredUsers(users: User[]) {
+//     return users.filter(x => x.age >= 18);
+// }
+
+// console.log(filteredUsers([{
+//     firstName: "harkirat",
+//     lastName: "Singh",
+//     age: 21
+// }, {
+//     firstName: "Raman",
+//     lastName: "Singh",
+//     age: 16
+// }, ]));
+
+// ENUMS
+
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
 }
 
-console.log(maxValue([1, 2, 3]));
-
-interface User {
-	firstName: string;
-	lastName: string;
-	age: number;
+enum Direction1 {
+    Up = "UP",
+    Down = "Down",
+    Left = "Left",
+    Right = 'Right'
 }
 
-function filteredUsers(users: User[]) {
-    return users.filter(x => x.age >= 18);
+function doSomething(keyPressed: Direction) {
+ 	// do something.
 }
 
-console.log(filteredUsers([{
-    firstName: "harkirat",
-    lastName: "Singh",
-    age: 21
-}, {
-    firstName: "Raman",
-    lastName: "Singh",
-    age: 16
-}, ]));
+doSomething(Direction.Up)
+
+enum ResponseStatus {
+    Success = 200,
+    NotFound = 404,
+    Error = 500
+}
+
+// app.get("/', (req, res) => {
+//     if (!req.query.userId) {
+// 			res.status(ResponseStatus.Error).json({})
+//     }
+       // and so on...
+// 		res.status(ResponseStatus.Success).json({});
+// })
